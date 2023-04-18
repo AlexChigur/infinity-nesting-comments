@@ -1,0 +1,58 @@
+.comment-list-item{
+    text-align: start;
+    max-width: 500px;
+}
+
+.root-comment {
+    padding-left: 10px;
+    display: flex;
+    padding: 20px 0;
+}
+
+.replies-block {
+    padding-left: 15px;
+}
+
+.comment-info {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comment-block {
+    display: flex;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 30px;
+}
+
+.author-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.name-and-created {
+    display: flex;
+    flex-direction: column;
+}
+
+.created-at {
+    padding: 10px 0;
+    color: grey;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+}

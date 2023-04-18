@@ -4,6 +4,7 @@ import authors from "src/data/authors";
 import {commentsPage1, commentsPage2, commentsPage3} from "src/data/comments";
 
 const useMockAdapter = () => {
+    
     const mock = new MockAdapter(axios, {delayResponse: 600});
 
     // authors

@@ -1,0 +1,19 @@
+
+
+.App {
+    padding: 40px 10px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    background-image: url('../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white
+}
+
+
+.img-like {
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+}

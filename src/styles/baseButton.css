@@ -1,0 +1,13 @@
+.base-button {
+
+}
+
+.button {
+    color: gray;
+    width: 200px;
+    height: 40px;
+    background-color: grey;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+}

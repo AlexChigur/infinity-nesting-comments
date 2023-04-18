@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import useMockAdapter from "src/api/useMockAdapter";
 import "./index.css";
 import App from "./App";
+import getCommentsRequest from "./api/comments/getCommentsRequest";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement,
@@ -10,7 +11,7 @@ const root = ReactDOM.createRoot(
 
 const RootApp = () => {
     useMockAdapter();
-
+    
     return <App />;
 };
 
