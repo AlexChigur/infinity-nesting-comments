@@ -1,3 +1,3 @@
-Yarn install
+1. Yarn install
 
-Yarn starn
+2. Yarn start
