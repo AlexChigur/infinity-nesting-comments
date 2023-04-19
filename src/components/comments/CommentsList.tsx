@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Author } from "src/entities/authors"
 import { Comment } from "src/entities/comments"
 import { CommentsListItem } from "./CommentsListItem"
 import { getRepliesByCommentId } from "src/services/comments"
 import { getAuthorByCommentId } from "src/services/authors"
 import '../../styles/commentList.css'
-import { BaseButton } from "../base/BaseButton"
-import { TotalLikesAndComments } from "./TotalLikesAndComments"
 
 type CommentsListProps = {
    list: Comment[],
    authors: Author[]
 }
 
-export const CommentsList = ({ list, authors }: CommentsListProps) => {
+export const CommentsList = React.memo(({ list, authors }: CommentsListProps) => {
 
     const rootComments = list.filter(
         (comment) => comment.parent === null
@@ -29,10 +27,6 @@ export const CommentsList = ({ list, authors }: CommentsListProps) => {
 
     return (
         <div className="comment-list">
-            <TotalLikesAndComments 
-                totalComments={267} 
-                totalLikes={232} 
-            />
             {rootComments.map(c => 
                 <CommentsListItem
                     key={c.id} 
@@ -46,10 +40,6 @@ export const CommentsList = ({ list, authors }: CommentsListProps) => {
                 />
                 )
             }
-            <BaseButton
-                padding="15px 0 0 0"
-                buttonText="More"
-            />
         </div>
     )
-}
+})

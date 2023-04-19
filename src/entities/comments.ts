@@ -9,6 +9,12 @@ export type Comment = {
     likes: number
 }
 
+export type Pagination = {
+    page: number
+    size: number
+    total_pages: number
+}
+
 export type CommentWithAuthor = {
     comment: Comment
     author: Author
@@ -16,4 +22,14 @@ export type CommentWithAuthor = {
 
 export type CommentWithChildren = Comment & {
     children: CommentWithChildren[]
+}
+
+export type TotalLikesAndCommentsResponse = {
+    totalLikes: number
+    totalComments: number
+}
+
+export type CommentsPageResponse = {
+    pagination: Pagination
+    comments: Comment[]
 }

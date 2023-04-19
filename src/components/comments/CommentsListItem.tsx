@@ -3,6 +3,7 @@ import { Comment } from "src/entities/comments"
 import '../../styles/commentListItem.css'
 import like from '../../assets/images/like.png'
 import { getCommentDate } from "src/services/comments"
+import React from "react"
 
 type CommentListItemProps = {
     comment: Comment
@@ -14,7 +15,7 @@ type CommentListItemProps = {
     getAuthor: (list: Author[], commentId: number) => Author | undefined
 }
 
-export const CommentsListItem = ({
+export const CommentsListItem = React.memo(({
     comment, 
     replies,
     authors,
@@ -60,4 +61,4 @@ export const CommentsListItem = ({
                 </div>
         </div>
     )
-}
+}, (prev, current) => prev.comment.id === current.comment.id)

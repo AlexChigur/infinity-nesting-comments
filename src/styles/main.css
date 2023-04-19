@@ -5,10 +5,14 @@
     height: 100%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     background-image: url('../assets/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: white
+    color: white;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
 }
 
 

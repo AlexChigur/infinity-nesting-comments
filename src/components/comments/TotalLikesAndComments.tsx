@@ -6,8 +6,7 @@ type TotalLikesAndCommentsProps = {
     totalLikes: number
 }
 
-export const TotalLikesAndComments = (
-    {
+export const TotalLikesAndComments = ({
     totalComments, totalLikes
 }: TotalLikesAndCommentsProps) => {
     return (

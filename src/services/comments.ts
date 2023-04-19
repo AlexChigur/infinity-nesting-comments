@@ -1,22 +1,27 @@
 import getCommentsRequest from "src/api/comments/getCommentsRequest"
-import { Author } from "src/entities/authors"
-import { Comment, CommentWithChildren } from "src/entities/comments"
+import { Comment, CommentsPageResponse } from "src/entities/comments"
 
-export const fetchComments = async (page: number): Promise<Comment[]> => {
+export const fetchPageComments = async (page: number): Promise<CommentsPageResponse> => {
     const response = await getCommentsRequest(page)
-    return response.data
+    return {
+        pagination: response.pagination,
+        comments: response.data
+    }
 }
 
-export const getComments = async (page: number): Promise<Comment[] | undefined> => {
+export const getComments = async (page: number): Promise<CommentsPageResponse | undefined> => {
     try {
-        const comments = await fetchComments(page);
+        const response = await fetchPageComments(page);
 
-  
-        const sortedComments = comments.sort((a, b) => Number(new Date(b.created)) - Number(new Date(a.created)))
+        const sortedComments = response.comments.sort((a, b) => Number(new Date(b.created)) - Number(new Date(a.created)))
         
-        return sortedComments
+        return {
+            pagination: response.pagination,
+            comments: sortedComments
+        }
     } catch (e) {
         console.log(e)
+        throw Error()
     }
 }
 
@@ -38,3 +43,4 @@ export const getCommentDate = (date: string): string => {
                 second: '2-digit'
             })
 }
+
